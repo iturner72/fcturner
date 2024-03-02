@@ -4,7 +4,7 @@ import PollOption from './components/PollOption';
 
 const App: React.FC = () => {
     const [options, setOptions] = useState<string[]>([]);
-    const url = 'https://5e21-192-145-119-230.ngrok-free.app/poll';
+    const url = 'https://d330-192-145-119-230.ngrok-free.app';
 
     useEffect(() => {
         fetch(url)
