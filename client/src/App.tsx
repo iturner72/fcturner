@@ -4,9 +4,10 @@ import PollOption from './components/PollOption';
 
 const App: React.FC = () => {
     const [options, setOptions] = useState<string[]>([]);
+    const url = 'https://5e21-192-145-119-230.ngrok-free.app/poll';
 
     useEffect(() => {
-        fetch('http://localhost:8080/poll')
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 console.log("Fetched data:", data);
@@ -18,7 +19,7 @@ const App: React.FC = () => {
     const handleSubmit = (option: string) => {
         console.log(option + ' was clicked');
 
-        fetch('http://localhost:8080/poll', {
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
